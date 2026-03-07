@@ -10,7 +10,7 @@ public Monster getCellMonster() {
 	return cellMonster;
 }
 
-MonsterCell(String name, Monster cellMonster){
+public MonsterCell(String name, Monster cellMonster){
 	super(name);
 	this.cellMonster=cellMonster;
 	

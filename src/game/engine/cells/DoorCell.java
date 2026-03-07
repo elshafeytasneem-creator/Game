@@ -22,7 +22,7 @@ public boolean isActivated() {
 public void setActivated(boolean activated) {
 	this.activated = activated;
 }
-DoorCell(String name, Role role, int energy){
+public DoorCell(String name, Role role, int energy){
 	super(name);
 	this.role=role;
 	this.energy=energy;
