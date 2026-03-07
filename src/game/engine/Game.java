@@ -37,7 +37,7 @@ public class Game {
 		this.current = current;
 	}
 	
-	 Game(Role playerRole) throws IOException{
+	public Game(Role playerRole) throws IOException{
 		 this.board = new Board(Dataloader.readCards());
 		 this.allMonsters = Dataloader.readMonsters();
 		 this.player = this.selectRandomMonsterByRole(playerRole);
