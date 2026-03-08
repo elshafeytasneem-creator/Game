@@ -1,7 +1,7 @@
 package game.engine.exceptions;
 
 public class InvalidMoveException extends GameActionException {
-	private static final String MSG =  "Action done on wrong turn";
+	private static final String MSG =  "Invalid move attempted";
 	
 	public  InvalidMoveException(){
 		super(MSG);

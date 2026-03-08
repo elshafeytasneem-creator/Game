@@ -1,6 +1,6 @@
 package game.engine;
 
-public class Constants {
+public final class Constants {
 	
 	//Board constants:
 	public final static int BOARD_SIZE = 100;

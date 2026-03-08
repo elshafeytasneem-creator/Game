@@ -22,18 +22,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Dataloader {
+public class DataLoader {
 	private static final String CARDS_FILE_NAME = "cards.csv";
 	private static final String CELLS_FILE_NAME = "cells.csv";
-	private static final String MONESTERS_FILE_NAME = "monsters.csv";
+	private static final String MONSTERS_FILE_NAME = "monsters.csv";
 	
 	
 	 public static ArrayList<Card> readCards() throws IOException{
 		 ArrayList<Card> cards = new ArrayList<>();
 		 try (BufferedReader br = new BufferedReader(new FileReader(CARDS_FILE_NAME))) {
-		        String line = br.readLine();
+		        String line ;
 		        
-		        while ((line ) != null) {
+		        while ((line= br.readLine() ) != null) {
 		            String[] values = line.split(",");
 		            String name="";
 		            String description="";
@@ -94,9 +94,9 @@ public class Dataloader {
 	 public static ArrayList<Cell> readCells() throws IOException{
 		 ArrayList<Cell> cells = new ArrayList<>();
 		 try (BufferedReader br = new BufferedReader(new FileReader(CELLS_FILE_NAME ))){
-			 String line = br.readLine();
+			 String line ;
 			 
-			 while ((line ) != null) {
+			 while ((line = br.readLine() ) != null) {
 				 String[] values = line.split(",");
 				 
 				 
@@ -127,10 +127,10 @@ public class Dataloader {
 	 
 	 public static ArrayList<Monster> readMonsters() throws IOException{
 		 ArrayList<Monster> monsters = new ArrayList<>();
-		 try (BufferedReader br = new BufferedReader(new FileReader( MONESTERS_FILE_NAME))){
-			 String line = br.readLine();
+		 try (BufferedReader br = new BufferedReader(new FileReader( MONSTERS_FILE_NAME))){
+			 String line;
 			 
-			 while ((line ) != null) {
+			 while ((line = br.readLine()) != null) {
 				 String[] values = line.split(",");
 				 
 				 String name="";
@@ -150,7 +150,7 @@ public class Dataloader {
 				 	case "DASHER":
 				 		name = values[1];
 				 		description = values[2];
-				 		role = Role.valueOf(values[3]);
+				 		role = Role.valueOf(values[3].trim());
 				 		energy = Integer.parseInt(values[4]);
 				 		Monster newDasher = new Dasher( name, description, role,energy);
 				 		monsters.add(newDasher);

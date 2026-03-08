@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 import java.math.*;
 
-import game.engine.dataloader.Dataloader;
+import game.engine.dataloader.DataLoader;
 import game.engine.monsters.Monster;
 
 public class Game {
@@ -38,8 +38,8 @@ public class Game {
 	}
 	
 	public Game(Role playerRole) throws IOException{
-		 this.board = new Board(Dataloader.readCards());
-		 this.allMonsters = Dataloader.readMonsters();
+		 this.board = new Board(DataLoader.readCards());
+		 this.allMonsters = DataLoader.readMonsters();
 		 this.player = this.selectRandomMonsterByRole(playerRole);
 		 if(playerRole.equals(Role.SCARER)){
 			 this.opponent = this.selectRandomMonsterByRole(Role.LAUGHER);
@@ -52,11 +52,11 @@ public class Game {
 	
 	
 	private Monster selectRandomMonsterByRole(Role role){
-			int index = ((int)Math.random()*this.allMonsters.size());
+			int index = (int)(Math.random()*this.allMonsters.size());
 			Monster m = this.allMonsters.get(index);
 			
 			while(m.getRole()!=role){
-				index = ((int)Math.random()*this.allMonsters.size());
+				index = (int)(Math.random()*this.allMonsters.size());
 				m = this.allMonsters.get(index);
 			}
 			

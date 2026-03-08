@@ -1,7 +1,7 @@
 package game.engine.monsters;
 import game.engine.Role;
 
-public class Monster implements Comparable<Monster> {
+abstract public class Monster implements Comparable<Monster> {
 	 private String name;
 	 private String description;
 	 private Role role;
@@ -10,6 +10,22 @@ public class Monster implements Comparable<Monster> {
 	 private int position;
 	 private boolean frozen;
 	 private boolean shielded;
+	 
+	 public Monster(String name, String description, Role originalRole, int energy) {
+			this.name = name;                     
+		    this.description = description;       
+		    this.originalRole = originalRole;     
+		    this.role = originalRole;             
+		    this.position = 0;                     
+		    this.confusionTurns = 0;              
+		    this.frozen = false;                  
+		    this.shielded = false;  
+		    if (energy >= 0) {                    
+		        this.energy = energy;
+		    } else {
+		        this.energy = 0;                  // in the constructor or Attributes ?
+		    }
+		}
 	 
 	 public boolean isFrozen() {
 		return frozen;
@@ -65,21 +81,7 @@ public class Monster implements Comparable<Monster> {
 	public void setConfusionTurns(int confusionTurns) {
 		this.confusionTurns = confusionTurns;
 	}
-	public Monster(String name, String description, Role originalRole, int energy) {
-		this.name = name;                     
-	    this.description = description;       
-	    this.originalRole = originalRole;     
-	    this.role = originalRole;             
-	    this.position = 0;                     
-	    this.confusionTurns = 0;              
-	    this.frozen = false;                  
-	    this.shielded = false;  
-	    if (energy >= 0) {                    
-	        this.energy = energy;
-	    } else {
-	        this.energy = 0;                  // in the constructor or Attributes ?
-	    }
-	}
+	
 	public int compareTo(Monster o) {
 	    if (this.position > o.position) {
 	        return -1; 
