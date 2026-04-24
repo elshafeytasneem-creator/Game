@@ -22,6 +22,8 @@ public class Dasher extends Monster {
     public void executePowerupEffect(Monster opponentMonster) {
         setMomentumTurns(3); 
     }
+    // 3× speed  is in board
+    //moves at 2× the dice roll is in board
 
     
   //  

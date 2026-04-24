@@ -7,13 +7,8 @@ public class Dynamo extends Monster   {
 		 super(name,description,role,energy); 
 	 }
 	 
-<<<<<<< HEAD
 	/* public void setEnergy(int energy) {
 		    if (energy < 0) {
-=======
-	 public void setEnergy(int energy) {
-		    if (energy < 0 ) {
->>>>>>> 6ea53b29d969b7e32bfc33eebcab0f3f948fee6a
 		        super.setEnergy(0); // Cap the energy at 0 if a negative value is provided
 		    }
 		}*/
@@ -28,8 +23,9 @@ public class Dynamo extends Monster   {
 	 
 
 	   
-	    public void executePowerupEffect(Monster opponentMonster) {
-	        opponentMonster.setFrozen(true); 
+	    public void executePowerupEffect(Monster opponent) {
+	        opponent.setFrozen(true); 
+	        
 	    }
 	
 	// 

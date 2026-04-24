@@ -24,7 +24,7 @@ public class MultiTasker extends Monster {
 	    }
 
 	    @Override
-	    public void executePowerupEffect(Monster opponentMonster) {
+	    public void executePowerupEffect(Monster opponent) {
 	        setNormalSpeedTurns(2); 
 	    }
 	    //
