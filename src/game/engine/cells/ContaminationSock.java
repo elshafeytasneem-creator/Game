@@ -16,5 +16,10 @@ public void onLand(Monster landingMonster, Monster opponentMonster){
 	this.transport(landingMonster);
 	
 }
+@Override
+public void modifyCanisterEnergy(Monster monster, int canisterValue) {
+	// TODO Auto-generated method stub
+	
+}
 
 }

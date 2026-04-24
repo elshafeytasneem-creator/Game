@@ -29,14 +29,41 @@ public DoorCell(String name, Role role, int energy){
 	activated=false;
 	
 }
+@Override
 public void onLand(Monster landingMonster, Monster opponentMonster){
 	super.onLand(landingMonster, opponentMonster);
-	if (this.isActivated())
-		return;
-	
-	
-	
-	
+	if (!this.isActivated()){
+		int value=(landingMonster.getRole()== role)? energy :-energy;
+		boolean changed=false;
+		int before=landingMonster.getEnergy();
+		modifyCanisterEnergy(landingMonster,value);
+		
+		if(landingMonster.getEnergy()!=before)
+			changed=true;
+		
+		 for (Monster m : Board.getStationedMonsters()) {
 
+	            if (m.getRole() == landingMonster.getRole()) {
+
+	                int prev = m.getEnergy();
+
+	                modifyCanisterEnergy(m, value);
+
+	                if (m.getEnergy() != prev) {
+	                    changed = true;
+	                }
+	            }
+	        }
+		
+		if (changed)
+			activated=true;
+	}
+
+}
+
+@Override
+public void modifyCanisterEnergy(Monster monster, int canisterValue) {
+	monster.alterEnergy(canisterValue);
+	
 }
 }
