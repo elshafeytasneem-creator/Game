@@ -1,8 +1,4 @@
 package game.engine.cells;
-
-
-
-
 import game.engine.monsters.Monster;
 public class Cell{
 	private String name;      
@@ -20,6 +16,11 @@ public class Cell{
 	public void setMonster(Monster monster) {
 		this.monster = monster;
 	}  
-
+	public boolean isOccupied(){
+		return this.getMonster()!=null;
+	}
+	public void onLand(Monster landingMonster, Monster opponentMonster){
+		this.setMonster(landingMonster);
+	}
 }
 
