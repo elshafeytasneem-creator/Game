@@ -116,7 +116,7 @@ abstract public class Monster implements Comparable<Monster> {
 			  }
 			  this.setEnergy(newEnergy);
 				  
-		
+	
 	}
 
 	
