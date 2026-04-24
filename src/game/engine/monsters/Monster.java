@@ -66,8 +66,8 @@ abstract public class Monster implements Comparable<Monster> {
 		return position;
 	}
 	public void setPosition(int position) {
-		
-			 this.position=position % Constants.BOARD_SIZE;
+		if (position>=0&&position<=99)
+			this.position=position;
 		 
 	}
 	public boolean isShielded() {

@@ -1,7 +1,7 @@
 package game.engine.cells;
 import game.engine.Role;
 import game.engine.interfaces.CanisterModifier;
-
+import game.engine.monsters.*;
 
 public class DoorCell extends Cell implements CanisterModifier {
 private Role role;
@@ -28,5 +28,15 @@ public DoorCell(String name, Role role, int energy){
 	this.energy=energy;
 	activated=false;
 	
+}
+public void onLand(Monster landingMonster, Monster opponentMonster){
+	super.onLand(landingMonster, opponentMonster);
+	if (this.isActivated())
+		return;
+	
+	
+	
+	
+
 }
 }
