@@ -38,6 +38,7 @@ public class DataLoader {
 		            String name="";
 		            String description="";
 		            int rarity=0;
+		            
 		            int energy=0;
 		            boolean lucky=false;
 		            int duration=0;

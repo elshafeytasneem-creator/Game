@@ -1,4 +1,5 @@
 package game.engine.cells;
+import game.engine.monsters.*;
 
 public abstract class TransportCell extends Cell {
 private int effect;
@@ -10,5 +11,8 @@ public int getEffect() {
 public TransportCell(String name, int effect){
 	super(name);
 	this.effect=effect;
+}
+public  void transport(Monster monster){
+	monster.move(this.getEffect());
 }
 }

@@ -1,4 +1,6 @@
 package game.engine.cards;
+import game.engine.*;
+import game.engine.monsters.Monster;
 
 public class ConfusionCard  extends Card{
 
@@ -11,7 +13,19 @@ public class ConfusionCard  extends Card{
 		this.duration=duration;
 	}
 	
-	public int getDuration(){
+	 public int getDuration(){
 		return duration;
 	}
+	 
+public void performAction(Monster player, Monster opponent) {
+
+    Role temp = player.getRole();
+
+    player.setRole(opponent.getRole());
+    opponent.setRole(temp);
+
+
+    player.setConfusionTurns(getDuration());
+    opponent.setConfusionTurns(getDuration());
+}
 }
