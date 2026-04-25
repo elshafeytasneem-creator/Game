@@ -13,7 +13,7 @@ public class Dynamo extends Monster   {
 		    }
 		}*/
 
-	 //
+	 
 	 public void setEnergy(int energy) {
 		 
 	     int current = getEnergy();
@@ -28,5 +28,5 @@ public class Dynamo extends Monster   {
 	        
 	    }
 	
-	// 
+	
 }

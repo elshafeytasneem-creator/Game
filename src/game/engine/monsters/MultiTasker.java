@@ -16,7 +16,7 @@ public class MultiTasker extends Monster {
 		  super(name, description, role, energy);
 		  this.normalSpeedTurns=0;
 	  }
-	  //
+	  
 	    public void setEnergy(int energy) {
 	        int current = getEnergy();
 	        int change = energy - current;
@@ -27,5 +27,5 @@ public class MultiTasker extends Monster {
 	    public void executePowerupEffect(Monster opponent) {
 	        setNormalSpeedTurns(2); 
 	    }
-	    //
+	 //move at 1/2 the dice roll for 2 turns is in boards
 }

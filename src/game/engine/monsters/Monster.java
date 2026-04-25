@@ -121,7 +121,14 @@ abstract public class Monster implements Comparable<Monster> {
 	
 	}
 
-	
+	public void decrementConfusion() {
+		if (getConfusionTurns() > 0) {
+			setConfusionTurns(getConfusionTurns() - 1);
+		}
+		if(getConfusionTurns() == 0) {
+			setRole(getOriginalRole());
+		}
+	}
 	
 		
 	

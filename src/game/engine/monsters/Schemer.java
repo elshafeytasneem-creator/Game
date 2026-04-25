@@ -19,11 +19,9 @@ public class Schemer extends Monster{
 		 target.setEnergy(targetEnergy - stolen);
 
 		 return stolen;
-			 
-		 
-		 
+			
 	}
-	//
+	
     public void setEnergy(int energy) {
         int current = getEnergy();
         int change = energy - current;
@@ -31,15 +29,24 @@ public class Schemer extends Monster{
     }
 
    
-    public void executePowerupEffect(Monster opponent) {
-        int totalStolen = 0;
-        totalStolen += stealEnergyFrom(opponent); 
-        for (Monster m : Board.getStationedMonsters()) {  
+   public void executePowerupEffect(Monster opponent) {
+    int totalStolen = 0;
+
+    // 1. Steal from the primary opponent
+    totalStolen += stealEnergyFrom(opponent);
+
+    // 2. Steal from all other stationed monsters (excluding the opponent we just hit)
+    for (Monster m : Board.getStationedMonsters()) {
+        if (m != opponent && m != this) { // Ensure we don't steal from ourselves or the primary opponent again
             totalStolen += stealEnergyFrom(m);
         }
-        alterEnergy(totalStolen); 
     }
-    //
+
+    // 3. Apply the single total bonus. 
+    // This calls setEnergy internally, triggering your +10 passive once.
+    alterEnergy(totalStolen);
+}
+    
 	
 
 }
