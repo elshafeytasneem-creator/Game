@@ -2,7 +2,7 @@ package game.engine.cells;
 import game.engine.monsters.Monster;
 public class Cell{
 	private String name;      
-    private Monster monster;
+  private Monster monster;
 	public String getName() {
 		return name;
 	}

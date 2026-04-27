@@ -18,8 +18,9 @@ public void onLand(Monster landingMonster, Monster opponentMonster){
 }
 @Override
 public void modifyCanisterEnergy(Monster monster, int canisterValue) {
-	// TODO Auto-generated method stub
-	
+	monster.alterEnergy(Constants.SLIP_PENALTY);
 }
+	
+
 
 }
